@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="favTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="favCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="favEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#favTeal)"/>
+  <circle cx="256" cy="256" r="195" fill="#ffffff"/>
+
+  <path d="M 135 210 A 135 135 0 0 1 360 160" fill="none" stroke="url(#favTeal)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M 377 302 A 135 135 0 0 1 152 352" fill="none" stroke="url(#favCyan)" stroke-width="22" stroke-linecap="round"/>
+
+  <path d="M 216 182 C 196 182 188 208 206 232 C 220 248 232 254 232 268 C 232 282 220 288 206 304 C 188 328 196 354 216 354 C 238 354 256 336 256 312 C 256 292 244 282 256 262 C 268 282 256 292 256 312 C 256 336 274 354 296 354 C 316 354 324 328 306 304 C 292 288 280 282 280 268 C 280 254 292 248 306 232 C 324 208 316 182 296 182 C 274 182 256 200 256 222 C 256 242 268 248 256 248 C 244 248 256 242 256 222 C 256 200 238 182 216 182 Z" fill="#0f766e"/>
+  <ellipse cx="256" cy="268" rx="44" ry="11" fill="#ffffff" stroke="url(#favEmerald)" stroke-width="6.5"/>
+
+  <circle cx="365" cy="145" r="28" fill="#0d9488" stroke="#ffffff" stroke-width="4.5"/>
+  <path d="M 353 145 L 377 145 M 365 133 L 365 157" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+</svg>

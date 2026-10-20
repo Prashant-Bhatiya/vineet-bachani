@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="sqTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="60%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="sqCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="sqEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(250, 190)">
+    <circle cx="0" cy="0" r="120" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="2.5"/>
+    <path d="M -85 -35 A 95 95 0 0 1 70 -68" fill="none" stroke="url(#sqTeal)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 85 35 A 95 95 0 0 1 -70 68" fill="none" stroke="url(#sqCyan)" stroke-width="12" stroke-linecap="round"/>
+
+    <path d="M -30 -65 C -45 -65 -50 -44 -32 -22 C -22 -6 -14 -4 -14 8 L 14 8 C 14 -4 22 -6 32 -22 C 50 -44 45 -65 30 -65 C 14 -65 0 -48 0 -28 C 0 -48 -14 -65 -30 -65 Z" fill="url(#sqTeal)"/>
+    <path d="M -32 65 C -46 65 -44 44 -28 22 C -18 8 -10 8 -10 8 L 10 8 C 10 8 18 8 28 22 C 44 44 46 65 32 65 C 16 65 0 48 0 32 C 0 48 -16 65 -32 65 Z" fill="url(#sqCyan)"/>
+    <ellipse cx="0" cy="8" rx="36" ry="8" fill="#ffffff" stroke="url(#sqEmerald)" stroke-width="4"/>
+
+    <g transform="translate(75, -75)">
+      <circle cx="0" cy="0" r="20" fill="#0d9488" stroke="#ffffff" stroke-width="3"/>
+      <path d="M -8 0 L 8 0 M 0 -8 L 0 8" stroke="#ffffff" stroke-width="3.8" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(250, 365)" text-anchor="middle">
+    <text y="15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="900" fill="#0f172a" letter-spacing="3">
+      PRATHVI
+    </text>
+    <text y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="800" fill="#0d9488" letter-spacing="3">
+      ORTHOPEDIC
+    </text>
+  </g>
+</svg>

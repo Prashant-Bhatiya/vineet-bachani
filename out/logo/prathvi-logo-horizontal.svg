@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" width="800" height="150">
+  <defs>
+    <linearGradient id="pTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="60%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="pCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="pEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left: Orthopedic Joint Emblem (Centered at x=75, y=75) -->
+  <g transform="translate(75, 75)">
+    <!-- Base Circle Container -->
+    <circle cx="0" cy="0" r="62" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="2"/>
+
+    <!-- Mobility Arc Upper (Teal) -->
+    <path d="M -42 -18 A 48 48 0 0 1 34 -34" fill="none" stroke="url(#pTeal)" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Mobility Arc Lower (Cyan) -->
+    <path d="M 42 18 A 48 48 0 0 1 -34 34" fill="none" stroke="url(#pCyan)" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Upper Joint Condyle (Femur) -->
+    <path d="M -16 -34 C -25 -34 -27 -23 -18 -12 C -12 -4 -7 -2 -7 4 L 7 4 C 7 -2 12 -4 18 -12 C 27 -23 25 -34 16 -34 C 7 -34 0 -25 0 -15 C 0 -25 -7 -34 -16 -34 Z" fill="url(#pTeal)"/>
+
+    <!-- Lower Joint Plateau (Tibia) -->
+    <path d="M -17 34 C -26 34 -24 23 -16 12 C -10 4 -6 4 -6 4 L 6 4 C 6 4 10 4 16 12 C 24 23 26 34 17 34 C 8 34 0 25 0 17 C 0 25 -8 34 -17 34 Z" fill="url(#pCyan)"/>
+
+    <!-- Emerald Meniscus Cushion Disc -->
+    <ellipse cx="0" cy="4" rx="20" ry="4.5" fill="#ffffff" stroke="url(#pEmerald)" stroke-width="2.5"/>
+
+    <!-- Medical Plus Cross Badge -->
+    <g transform="translate(38, -38)">
+      <circle cx="0" cy="0" r="12" fill="#0d9488" stroke="#ffffff" stroke-width="2"/>
+      <path d="M -5 0 L 5 0 M 0 -5 L 0 5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Right: Pure Brand Typography (x=165, y=92) -->
+  <g transform="translate(165, 92)">
+    <!-- PRATHVI -->
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="900" fill="#0f172a" letter-spacing="3">
+      PRATHVI
+    </text>
+
+    <!-- ORTHOPEDIC -->
+    <text x="270" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="800" fill="#0d9488" letter-spacing="2">
+      ORTHOPEDIC
+    </text>
+  </g>
+</svg>
