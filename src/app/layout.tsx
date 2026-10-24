@@ -15,11 +15,14 @@ export const metadata: Metadata = {
   description: 'Consult Dr. Vineet Bachani (MBBS, M.S. Orthopedics, Reg: G-82085) at Prathvi Orthopedic Centre, South Bopal, Ahmedabad. Expert in Knee & Hip Replacement, Arthroscopy, Fracture Trauma & Spine Care.',
   icons: {
     icon: [
-      { url: '/logo/prathvi-favicon-64.png', sizes: '64x64', type: 'image/png' },
-      { url: '/logo/prathvi-favicon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/logo/prathvi-favicon-32.png?v=3', sizes: '32x32', type: 'image/png' },
+      { url: '/logo/prathvi-favicon-64.png?v=3', sizes: '64x64', type: 'image/png' },
+      { url: '/logo/prathvi-favicon-512.png?v=3', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico?v=3', sizes: 'any' },
     ],
+    shortcut: ['/logo/prathvi-favicon-32.png?v=3'],
     apple: [
-      { url: '/logo/prathvi-favicon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/logo/prathvi-favicon-512.png?v=3', sizes: '512x512', type: 'image/png' },
     ],
   },
   keywords: [

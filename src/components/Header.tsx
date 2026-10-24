@@ -21,7 +21,7 @@ export default function Header() {
               width={280}
               height={56}
               priority
-              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-[1.02] transition-transform"
+              className="h-9 sm:h-12 w-auto max-w-[220px] sm:max-w-none object-contain group-hover:scale-[1.02] transition-transform"
             />
           </a>
 

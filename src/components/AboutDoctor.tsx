@@ -1,82 +1,121 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { GraduationCap, Award, Stethoscope, CheckCircle2, Languages, FileText, ChevronRight, User } from 'lucide-react';
 import { DOCTOR_DATA } from '@/data/doctorData';
 
 export default function AboutDoctor() {
-  const [activePhoto, setActivePhoto] = useState<'consultation' | 'original'>('consultation');
+  const photos = [
+    {
+      id: 'portrait',
+      src: '/images/dr-vineet-consultation.jpg',
+      title: DOCTOR_DATA.name,
+      subtitle: `${DOCTOR_DATA.degree} • ${DOCTOR_DATA.title}`,
+      badge: `Reg: ${DOCTOR_DATA.registrationNo}`,
+    },
+    {
+      id: 'consultation',
+      src: '/images/dr-vineet-opd.jpg',
+      title: 'In OPD Consultation',
+      subtitle: 'Personalized Case History & Care',
+      badge: 'Prathvi Clinic OPD',
+    },
+    {
+      id: 'xray',
+      src: '/images/dr-vineet-xray.jpg',
+      title: 'Diagnostic Evaluation',
+      subtitle: 'Digital X-Ray Report Assessment',
+      badge: 'Evidence-Based Care',
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-rotate photos every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % photos.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [photos.length]);
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-12 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="text-teal-600 font-bold text-xs uppercase tracking-widest bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
             About the Doctor
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5 sm:mt-3 tracking-tight">
             Meet Dr. Vineet Bachani
           </h2>
-          <p className="text-slate-600 text-base mt-3">
+          <p className="text-slate-600 text-xs sm:text-base mt-2 sm:mt-3 leading-relaxed">
             Dedicated Orthopedic &amp; Joint Replacement Surgeon combining academic excellence, 
             prestigious hospital fellowships, and a compassionate, patient-first surgical philosophy.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Photo Showcase & Badges */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative rounded-3xl p-3 bg-gradient-to-tr from-slate-100 to-teal-50 border border-slate-200 shadow-xl overflow-hidden">
-              <div className="relative h-[460px] sm:h-[500px] w-full rounded-2xl overflow-hidden bg-slate-200 shadow-inner">
-                <Image
-                  src={activePhoto === 'consultation' ? '/images/dr-vineet-consultation.jpg' : '/images/dr-vineet-original.jpg'}
-                  alt="Dr. Vineet Bachani Profile"
-                  fill
-                  className="object-cover object-top transition-all duration-500"
-                />
+            <div className="relative rounded-2xl sm:rounded-3xl p-2.5 sm:p-3 bg-gradient-to-tr from-slate-100 to-teal-50 border border-slate-200 shadow-xl overflow-hidden">
+              <div className="relative h-[360px] sm:h-[440px] lg:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-slate-200 shadow-inner">
+                {/* Crossfading Slide Photos */}
+                {photos.map((item, idx) => (
+                  <div
+                    key={item.id}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                      idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      priority={idx === 0}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ))}
 
-                {/* Badge Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-md border border-slate-100">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-bold text-slate-900">{DOCTOR_DATA.name}</p>
-                      <p className="text-[11px] text-teal-700 font-semibold">{DOCTOR_DATA.degree}</p>
+                {/* Badge Overlay (Responsive & Immune to Overflow) */}
+                <div className="absolute bottom-2.5 sm:bottom-3 left-2.5 sm:left-3 right-2.5 sm:right-3 z-20 bg-white/95 backdrop-blur-md rounded-xl p-2.5 sm:p-3 shadow-md border border-slate-100 transition-all duration-500">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                        {photos[currentIndex].title}
+                      </p>
+                      <p className="text-[10px] sm:text-[11px] text-teal-700 font-semibold truncate">
+                        {photos[currentIndex].subtitle}
+                      </p>
                     </div>
-                    <span className="text-[10px] bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded">
-                      Reg: {DOCTOR_DATA.registrationNo}
+                    <span className="text-[10px] sm:text-xs bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded shrink-0 whitespace-nowrap">
+                      {photos[currentIndex].badge}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Photo Toggle Buttons */}
-              <div className="flex items-center justify-center gap-2 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setActivePhoto('consultation')}
-                  className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-colors ${
-                    activePhoto === 'consultation'
-                      ? 'bg-teal-600 text-white shadow-sm'
-                      : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                  }`}
-                >
-                  Clinical Portrait
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActivePhoto('original')}
-                  className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-colors ${
-                    activePhoto === 'original'
-                      ? 'bg-teal-600 text-white shadow-sm'
-                      : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                  }`}
-                >
-                  Doctor Photo
-                </button>
+              {/* Minimalist Slide Progress Dots (Auto-cycling every 5s) */}
+              <div className="flex items-center justify-center gap-2 pt-2.5">
+                {photos.map((item, idx) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`transition-all duration-500 rounded-full ${
+                      idx === currentIndex
+                        ? 'w-6 h-1.5 bg-teal-600 shadow-xs'
+                        : 'w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400'
+                    }`}
+                    aria-label={`Show slide ${idx + 1}`}
+                  />
+                ))}
               </div>
             </div>
 
